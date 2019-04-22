@@ -218,26 +218,22 @@ $datagrid-short-row-height: 23px;
       }
     }
 
-    .is-filterable .datagrid-column-wrapper {
+    .datagrid-column-wrapper {
       top: -3px;
-
-      &.l-right-text {
-        top: -3px;
-      }
     }
 
-    // Filter columns with no filteirng when mixed in with the others.
-    th:not(.is-filterable) {
-      .datagrid-header-text {
-        position: relative;
-        top: -16px;
-      }
+    // // Filter columns with no filteirng when mixed in with the others.
+    // th:not(.is-filterable) {
+    //   .datagrid-header-text {
+    //     position: relative;
+    //     top: -16px;
+    //   }
 
-      .sort-indicator {
-        position: relative;
-        top: -16px;
-      }
-    }
+    //   .sort-indicator {
+    //     position: relative;
+    //     top: -16px;
+    //   }
+    // }
   }
 
   &.has-toolbar.has-two-line-header {
@@ -2378,6 +2374,7 @@ $datagrid-short-row-height: 23px;
 
   //Column Resize
   .datagrid-column-wrapper {
+    outline: solid 1px pink;
     display: table;
     height: 35px;
     padding: 0 20px;
@@ -2386,15 +2383,23 @@ $datagrid-short-row-height: 23px;
 
     &.l-right-text {
       direction: rtl;
-      float: right;
-
-      .sort-indicator {
-        margin: 2px 2px 0;
-      }
     }
   }
 
-  //Datagrid filterrow
+  // Datagrid filterrow
+  .datagrid-filter-wrapper {
+    outline:solid 1px yellow;
+    display: block;
+    height: 22px;
+    line-height: 30px;
+    margin-bottom: 3px;
+    max-width: calc(100% - 20px);
+    min-width: 70px;
+    position: relative;
+    top: -7px;
+    width: calc(100% - 20px);
+  }
+
   .is-filterable {
     .datagrid-column-wrapper {
       &.l-right-text {
@@ -2405,16 +2410,6 @@ $datagrid-short-row-height: 23px;
     }
 
     .datagrid-filter-wrapper {
-      display: block;
-      height: 22px;
-      line-height: 30px;
-      margin-bottom: 3px;
-      max-width: calc(100% - 20px);
-      min-width: 70px;
-      position: relative;
-      top: -7px;
-      width: calc(100% - 20px);
-
       input {
         background-color: transparent;
         border-color: $datagrid-filter-border-color;
@@ -2674,15 +2669,18 @@ $datagrid-short-row-height: 23px;
 // Sorting
 .sort-indicator {
   display: inline-block;
-  margin: 3px 0 0;
-  vertical-align: top;
+  position: relative;
+  top: 3px;
 
   .icon {
     @include transition(all 250ms ease);
 
+    outline: solid 1px red;
+
     color: $datagrid-sort-icon-color;
     height: 18px;
-    opacity: 0;
+    // opacity: 0;
+    opacity: 1;
     width: 18px;
   }
 
@@ -2693,7 +2691,6 @@ $datagrid-short-row-height: 23px;
   span {
     display: block;
     height: 10px;
-    margin-left: 5px;
   }
 }
 
