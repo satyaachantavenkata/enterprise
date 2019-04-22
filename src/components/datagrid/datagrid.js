@@ -1173,7 +1173,7 @@ Datagrid.prototype = {
       // If header text is center aligned, for proper styling,
       // place the sortIndicator as a child of datagrid-header-text.
       headerRows[container] += `<div class="${isSelection ? 'datagrid-checkbox-wrapper ' : 'datagrid-column-wrapper'}${headerAlignmentClass}">
-      <span class="datagrid-header-text${column.required ? ' required' : ''}">${self.headerText(this.settings.columns[j])}${headerAlignmentClass === ' l-center-text' ? sortIndicator : ''}</span>`;
+      <span class="datagrid-header-text${column.required ? ' required' : ''}">${self.headerText(this.settings.columns[j])}</span>`;
       headerColGroupCols[container] += `<col${this.columnWidth(column, j)}${column.hidden ? ' class="is-hidden"' : ''}>`;
 
       if (isSelection) {
@@ -1187,7 +1187,7 @@ Datagrid.prototype = {
       // Note the space in classname.
       // Place sortIndicator via concatenation if
       // header text is not center aligned.
-      if (isSortable && headerAlignmentClass !== ' l-center-text') {
+      if (isSortable) {
         headerRows[container] += sortIndicator;
       }
 

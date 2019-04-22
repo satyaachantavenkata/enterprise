@@ -608,7 +608,7 @@ $datagrid-short-row-height: 23px;
 
     .datagrid-column-wrapper {
       padding: 0 15px;
-      top: 0;
+      // top: 0;
 
       &.l-right-text {
         .datagrid-header-text {
@@ -627,7 +627,7 @@ $datagrid-short-row-height: 23px;
 
     .is-filterable {
       .datagrid-column-wrapper {
-        top: -2px;
+        // top: -2px;
       }
 
       .datagrid-filter-wrapper {
@@ -2698,9 +2698,9 @@ $datagrid-short-row-height: 23px;
 .datagrid-column-wrapper.l-center-text {
   width: 100%;
 
-  .sort-indicator {
-    margin: -6px -22px 0 0;
-  }
+  // .sort-indicator {
+  //   margin: -6px -22px 0 0;
+  // }
 }
 
 .is-sorted-asc {
